@@ -1,12 +1,21 @@
 import fs from "fs";
 import path from "path";
+import Link from "next/link";
 import matter from "gray-matter";
 import Layout from "../components/Layout";
+import Post from "../components/Post";
 
 export default function Home({ posts }) {
     return (
         <Layout>
-            <h1>Hello World</h1>
+            <h1>Latest Posts</h1>
+            <div>
+                {posts.map((post, index) => (
+                    <Post key={index} post={post} />
+                ))}
+            </div>
+
+            <Link href="/blog">Blog Link</Link>
         </Layout>
     );
 }
