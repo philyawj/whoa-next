@@ -12,7 +12,7 @@ export default function Layout({ title, keywords, description, children }) {
             </Head>
 
             <Header />
-            <main>{children}</main>
+            <main className="container">{children}</main>
         </div>
     );
 }
