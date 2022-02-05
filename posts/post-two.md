@@ -8,10 +8,11 @@ author: "John Doe"
 author_image: "https://randomuser.me/api/portraits/women/11.jpg"
 ---
 
-# Blog Post One
+# Blog Post Two
 
 What a super cool post.
 
 ## Post Two
 
-Right?
+**RIGHT?**
+_yes_
