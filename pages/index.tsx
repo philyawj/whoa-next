@@ -8,7 +8,6 @@ export default function Home({ posts, categories }) {
     return (
         <Layout>
             <h1>Latest Posts</h1>
-            <h2>Posts</h2>
             <div>
                 {posts.map((post, index) => (
                     <Post key={index} post={post} />
