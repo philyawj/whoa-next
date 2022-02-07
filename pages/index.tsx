@@ -12,8 +12,6 @@ export default function Home({ posts }) {
                     <Post key={index} post={post} />
                 ))}
             </div>
-
-            <Link href="/blog">Blog Link</Link>
         </Layout>
     );
 }

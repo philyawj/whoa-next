@@ -7,7 +7,7 @@ export default function Post({ post }) {
             <p>{post.frontmatter.date}</p>
             <p>{post.frontmatter.category}</p>
             <p>{post.frontmatter.excerpt}</p>
-            <Link href={`/blog/${post.slug}`}>Full Post Link</Link>
+            <Link href={`/${post.slug}`}>Full Post Link</Link>
             <img src={post.frontmatter.author_image} alt="" />
             <hr />
         </div>

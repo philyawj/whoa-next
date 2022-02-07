@@ -22,7 +22,7 @@ export default function PostPage({
 
             <div dangerouslySetInnerHTML={{ __html: marked(content) }}></div>
             <hr />
-            <Link href="/blog">Go Back Link</Link>
+            <Link href="/">Go Back Home</Link>
         </Layout>
     );
 }
