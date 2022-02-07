@@ -15,7 +15,7 @@ export default function PostPage({
             <h1>{title}</h1>
             <img src={cover_image} width={400} height={250} alt="" />
             <h5>{date}</h5>
-            <h5>{category}</h5>
+            <Link href={`/category/${category.toLowerCase()}`}>{category}</Link>
 
             <div dangerouslySetInnerHTML={{ __html: marked(content) }}></div>
             <hr />
