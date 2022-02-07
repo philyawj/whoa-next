@@ -7,7 +7,6 @@ import { getPosts } from "@/lib/posts";
 export default function Home({ posts, categories }) {
     return (
         <Layout>
-            <h1>Latest Posts</h1>
             <div>
                 {posts.map((post, index) => (
                     <Post key={index} post={post} />
