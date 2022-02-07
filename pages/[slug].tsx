@@ -6,7 +6,7 @@ import Link from "next/link";
 import Layout from "@components/Layout";
 
 export default function PostPage({
-    frontmatter: { title, category, date, cover_image, author },
+    frontmatter: { title, category, date, cover_image },
     content,
     slug,
 }) {
@@ -14,7 +14,6 @@ export default function PostPage({
         <Layout title={title}>
             <h1>{title}</h1>
             <img src={cover_image} width={400} height={250} alt="" />
-            <h4>{author}</h4>
             <h5>{date}</h5>
             <h5>{category}</h5>
 
