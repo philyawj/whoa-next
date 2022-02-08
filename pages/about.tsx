@@ -6,9 +6,12 @@ export default function AboutPage() {
             <h1>About</h1>
 
             <div>
-                <h3>Whoa - Next</h3>
+                <p>
+                    This is a static site about random interesting things built
+                    with Next.js and Markdown.
+                </p>
 
-                <p>This is a site built with Next.js and Markdown.</p>
+                <img src="/images/whoa.gif" alt="" />
             </div>
         </Layout>
     );

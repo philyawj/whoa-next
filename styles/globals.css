@@ -17,3 +17,12 @@ main.container {
     margin-bottom: 2rem;
     padding: 1.5rem;
 }
+
+img {
+    margin-bottom: 2rem;
+}
+
+.responsive {
+    max-width: 100%;
+    height: auto;
+}

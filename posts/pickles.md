@@ -2,7 +2,7 @@
 title: "Pickles Have No Calories"
 date: "February 7, 2022"
 excerpt: "Certain kinds of pickles have zero calories."
-cover_image: "/images/posts/img1.jpg"
+cover_image: "/images/posts/pickle.jpg"
 category: "Food"
 ---
 

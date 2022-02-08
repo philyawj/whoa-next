@@ -12,8 +12,8 @@ export default function PostPage({
 }) {
     return (
         <Layout title={title}>
-            <h2>{title}</h2>
-            <img src={cover_image} width={400} height={250} alt="" />
+            <h1>{title}</h1>
+            <img src={cover_image} width={640} className="responsive" alt="" />
             <p>
                 Category:{" "}
                 <Link href={`/category/${category.toLowerCase()}`}>

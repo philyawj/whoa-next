@@ -3,7 +3,15 @@ import Link from "next/link";
 export default function Post({ post }) {
     return (
         <div className="post">
-            <h2>{post.frontmatter.title}</h2>
+            <h2>
+                <Link href={`/${post.slug}`}>{post.frontmatter.title}</Link>
+            </h2>
+            <img
+                src={post.frontmatter.cover_image}
+                width={400}
+                className="responsive"
+                alt=""
+            />
             <p>{post.frontmatter.excerpt}</p>
             <p>
                 Category:{" "}

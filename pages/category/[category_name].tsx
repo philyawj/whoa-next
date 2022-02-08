@@ -9,7 +9,7 @@ import { getPosts } from "@/lib/posts";
 export default function CategoryBlogPage({ posts, categoryName, categories }) {
     return (
         <Layout>
-            <h1>Posts in category: {categoryName}</h1>
+            <h1>Category: {categoryName}</h1>
             <div>
                 {posts.map((post, index) => (
                     <Post key={index} post={post} />
