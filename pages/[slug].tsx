@@ -6,14 +6,19 @@ import Link from "next/link";
 import Layout from "@components/Layout";
 
 export default function PostPage({
-    frontmatter: { title, category, date, cover_image },
+    frontmatter: { title, category, date, cover_image, cover_image_alt },
     content,
     slug,
 }) {
     return (
         <Layout title={title}>
             <h1>{title}</h1>
-            <img src={cover_image} width={640} className="responsive" alt="" />
+            <img
+                src={cover_image}
+                width={640}
+                className="responsive"
+                alt={cover_image_alt}
+            />
             <p>
                 Category:{" "}
                 <Link href={`/category/${category.toLowerCase()}`}>

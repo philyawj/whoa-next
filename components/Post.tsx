@@ -10,7 +10,7 @@ export default function Post({ post }) {
                 src={post.frontmatter.cover_image}
                 width={400}
                 className="responsive"
-                alt=""
+                alt={post.frontmatter.cover_image_alt}
             />
             <p>{post.frontmatter.excerpt}</p>
             <p>
