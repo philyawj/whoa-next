@@ -12,13 +12,17 @@ export default function PostPage({
 }) {
     return (
         <Layout title={title}>
-            <h1>{title}</h1>
+            <h2>{title}</h2>
             <img src={cover_image} width={400} height={250} alt="" />
-            <h5>{date}</h5>
-            <Link href={`/category/${category.toLowerCase()}`}>{category}</Link>
+            <p>
+                Category:{" "}
+                <Link href={`/category/${category.toLowerCase()}`}>
+                    {category}
+                </Link>
+            </p>
+            <p>Posted: {date}</p>
 
             <div dangerouslySetInnerHTML={{ __html: marked(content) }}></div>
-            <hr />
             <Link href="/">Go Back Home</Link>
         </Layout>
     );
