@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Layout from "@components/Layout";
 import Post from "@components/Post";
 import CategoryList from "@components/CategoryList";
@@ -25,11 +24,9 @@ export async function getStaticProps() {
     const categories = posts.map((post) => post.frontmatter.category);
     const uniqueCategories = [...new Set(categories)];
 
-    console.log(uniqueCategories);
-
     return {
         props: {
-            posts: posts.slice(0, 6),
+            posts: posts,
             categories: uniqueCategories,
         },
     };

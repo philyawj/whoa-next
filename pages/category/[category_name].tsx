@@ -46,8 +46,6 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params: { category_name } }) {
-    const files = fs.readdirSync(path.join("posts"));
-
     const posts = getPosts();
 
     // categories for sidebar
