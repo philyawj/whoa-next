@@ -1,7 +1,18 @@
 import Head from "next/head";
+import React from "react";
 import Header from "./Header";
 
-export default function Layout({ title, keywords, description, children }) {
+export default function Layout({
+    title,
+    keywords,
+    description,
+    children,
+}: {
+    title: string;
+    keywords: string;
+    description: string;
+    children: React.ReactNode;
+}) {
     return (
         <div>
             <Head>

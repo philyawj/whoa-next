@@ -5,7 +5,7 @@ export default function NotFoundPage() {
         <Layout title="Page Not Found">
             <div>
                 <h1>Whoops!</h1>
-                <h2>This page does not exist</h2>
+                <h2>This page does not exist.</h2>
             </div>
         </Layout>
     );

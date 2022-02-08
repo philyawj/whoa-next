@@ -3,11 +3,24 @@ import Post from "@components/Post";
 import CategoryList from "@components/CategoryList";
 import { getPosts } from "@/lib/posts";
 
-export default function Home({ posts, categories }) {
+interface Post {
+    slug: string;
+    frontmatter: {
+        [key: string]: any;
+    };
+}
+
+export default function Home({
+    posts,
+    categories,
+}: {
+    posts: Post[];
+    categories: [];
+}) {
     return (
         <Layout>
             <div>
-                {posts.map((post, index) => (
+                {posts.map((post, index: number) => (
                     <Post key={index} post={post} />
                 ))}
             </div>
