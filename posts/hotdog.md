@@ -7,4 +7,4 @@ cover_image_alt: "taco stand"
 category: "Food"
 ---
 
-According to [The Cube Rule](https://cuberule.com/) it is a taco.
+According to [The Cube Rule](https://cuberule.com/) it is a taco. It is not a sandwich.

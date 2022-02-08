@@ -19,6 +19,7 @@ export default function PostPage({
                 className="responsive"
                 alt={cover_image_alt}
             />
+            <div dangerouslySetInnerHTML={{ __html: marked(content) }}></div>
             <p>
                 Category:{" "}
                 <Link href={`/category/${category.toLowerCase()}`}>
@@ -26,8 +27,6 @@ export default function PostPage({
                 </Link>
             </p>
             <p>Posted: {date}</p>
-
-            <div dangerouslySetInnerHTML={{ __html: marked(content) }}></div>
             <Link href="/">Go Back Home</Link>
         </Layout>
     );
