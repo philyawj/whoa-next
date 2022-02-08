@@ -11,7 +11,11 @@ export default function AboutPage() {
                     with Next.js and Markdown.
                 </p>
 
-                <img src="/images/whoa.gif" alt="" />
+                <img
+                    src="/images/whoa.png"
+                    alt="whoa neo"
+                    className="responsive"
+                />
             </div>
         </Layout>
     );
