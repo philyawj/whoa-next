@@ -1,4 +1,5 @@
-// TODO typescript types
-export const sortByDate = (a: any, b: any) => {
-    return new Date(b.frontmatter.date) - new Date(a.frontmatter.date);
+import { PostType } from "types";
+
+export const sortByDate = (a: PostType, b: PostType) => {
+    return b.frontmatter.date.localeCompare(a.frontmatter.date);
 };

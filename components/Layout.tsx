@@ -2,6 +2,7 @@ import Head from "next/head";
 import React from "react";
 import Header from "./Header";
 
+// TODO test defaults
 const Layout = ({
     title = "Whoa Static Site",
     keywords = "whoa, amazing",
@@ -19,7 +20,6 @@ const Layout = ({
                 <title>{title}</title>
                 <meta name="keywords" content={keywords} />
                 <meta name="description" content={description} />
-                {/* TODO favi */}
             </Head>
 
             <Header />

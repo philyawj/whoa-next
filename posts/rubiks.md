@@ -1,6 +1,6 @@
 ---
 title: "Juggling + Solving 3 Rubik's cubes"
-date: "January 30, 2022"
+date: "2022-01-30"
 excerpt: "And you thought one Rubik's cube was hard?"
 cover_image: "/images/posts/rubiks.jpg"
 cover_image_alt: "rubik's cube"
