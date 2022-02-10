@@ -5,7 +5,11 @@ import Layout from "@components/Layout";
 import Post from "@components/Post";
 import CategoryList from "@components/CategoryList";
 import { getPosts } from "@/lib/posts";
-import { PostType } from "types";
+import { Params, PostType } from "types";
+
+interface CategoryNameProps {
+    category_name: string;
+}
 
 const CategoryBlogPage = ({
     posts,
@@ -54,16 +58,9 @@ export async function getStaticPaths() {
     };
 }
 
-interface ParamProps {
-    params: CategoryNameProps;
-}
-interface CategoryNameProps {
-    category_name: string;
-}
-
 export async function getStaticProps({
     params: { category_name },
-}: ParamProps) {
+}: Params<CategoryNameProps>) {
     const posts = getPosts();
 
     // categories for sidebar

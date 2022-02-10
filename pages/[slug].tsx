@@ -4,6 +4,7 @@ import matter from "gray-matter";
 import { marked } from "marked";
 import Link from "next/link";
 import Layout from "@components/Layout";
+import { Params } from "types";
 
 interface PostPageProps {
     frontmatter: PostFrontmatter;
@@ -16,6 +17,10 @@ interface PostFrontmatter {
     date: string;
     cover_image: string;
     cover_image_alt: string;
+}
+
+interface SlugProps {
+    slug: string;
 }
 
 const PostPage = ({
@@ -60,15 +65,8 @@ export async function getStaticPaths() {
     };
 }
 
-interface ParamProps {
-    params: SlugProps;
-}
-interface SlugProps {
-    slug: string;
-}
-
 // TODO define these as consts
-export async function getStaticProps({ params: { slug } }: ParamProps) {
+export async function getStaticProps({ params: { slug } }: Params<SlugProps>) {
     const markdownWithMeta = fs.readFileSync(
         path.join("posts", slug + ".md"),
         "utf-8",
