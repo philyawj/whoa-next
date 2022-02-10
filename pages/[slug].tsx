@@ -5,11 +5,24 @@ import { marked } from "marked";
 import Link from "next/link";
 import Layout from "@components/Layout";
 
-export default function PostPage({
+interface PostPageProps {
+    frontmatter: PostFrontmatter;
+    content: any;
+    slug: string;
+}
+interface PostFrontmatter {
+    title: string;
+    category: string;
+    date: string;
+    cover_image: string;
+    cover_image_alt: string;
+}
+
+const PostPage = ({
     frontmatter: { title, category, date, cover_image, cover_image_alt },
     content,
     slug,
-}) {
+}: PostPageProps) => {
     return (
         <Layout title={title}>
             <h1>{title}</h1>
@@ -30,7 +43,7 @@ export default function PostPage({
             <Link href="/">Go Back Home</Link>
         </Layout>
     );
-}
+};
 
 export async function getStaticPaths() {
     const files = fs.readdirSync(path.join("posts"));
@@ -47,7 +60,14 @@ export async function getStaticPaths() {
     };
 }
 
-export async function getStaticProps({ params: { slug } }) {
+interface ParamProps {
+    params: SlugProps;
+}
+interface SlugProps {
+    slug: string;
+}
+
+export async function getStaticProps({ params: { slug } }: ParamProps) {
     const markdownWithMeta = fs.readFileSync(
         path.join("posts", slug + ".md"),
         "utf-8",
@@ -63,3 +83,5 @@ export async function getStaticProps({ params: { slug } }) {
         },
     };
 }
+
+export default PostPage;

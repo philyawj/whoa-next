@@ -33,7 +33,6 @@ export default function Home({
 export async function getStaticProps() {
     const posts = getPosts();
 
-    // categories for sidebar
     const categories = posts.map((post) => post.frontmatter.category);
     const uniqueCategories = [...new Set(categories)];
 
