@@ -34,7 +34,7 @@ const CategoryPage = ({
     );
 };
 
-export async function getStaticPaths() {
+export const getStaticPaths = async () => {
     const files = fs.readdirSync(path.join("posts"));
 
     const categories = files.map((filename) => {
@@ -56,12 +56,11 @@ export async function getStaticPaths() {
         paths,
         fallback: false,
     };
-}
+};
 
-// TODO make functional async
-export async function getStaticProps({
+export const getStaticProps = async ({
     params: { category_name },
-}: Params<CategoryNameProps>) {
+}: Params<CategoryNameProps>) => {
     const posts = getPosts();
 
     const categories = posts.map((post) => post.frontmatter.category);
@@ -78,6 +77,6 @@ export async function getStaticProps({
             categories: uniqueCategories,
         },
     };
-}
+};
 
 export default CategoryPage;

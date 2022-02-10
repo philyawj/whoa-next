@@ -41,7 +41,7 @@ const PostPage = ({
     );
 };
 
-export async function getStaticPaths() {
+export const getStaticPaths = async () => {
     const files = fs.readdirSync(path.join("posts"));
 
     const paths = files.map((filename) => ({
@@ -54,9 +54,11 @@ export async function getStaticPaths() {
         paths,
         fallback: false,
     };
-}
+};
 
-export async function getStaticProps({ params: { slug } }: Params<SlugProps>) {
+export const getStaticProps = async ({
+    params: { slug },
+}: Params<SlugProps>) => {
     const markdownWithMeta = fs.readFileSync(
         path.join("posts", slug + ".md"),
         "utf-8",
@@ -70,6 +72,6 @@ export async function getStaticProps({ params: { slug } }: Params<SlugProps>) {
             content,
         },
     };
-}
+};
 
 export default PostPage;

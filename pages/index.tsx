@@ -24,7 +24,7 @@ const HomePage = ({
     );
 };
 
-export async function getStaticProps() {
+export const getStaticProps = async () => {
     const posts = getPosts();
 
     const categories = posts.map((post) => post.frontmatter.category);
@@ -36,6 +36,6 @@ export async function getStaticProps() {
             categories: uniqueCategories,
         },
     };
-}
+};
 
 export default HomePage;
