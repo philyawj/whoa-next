@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function Post({ post }) {
+const Post = ({ post }) => {
     return (
         <div className="post">
             <h2>
@@ -25,4 +25,6 @@ export default function Post({ post }) {
             <Link href={`/${post.slug}`}>Full Post</Link>
         </div>
     );
-}
+};
+
+export default Post;

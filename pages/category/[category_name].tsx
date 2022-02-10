@@ -6,7 +6,7 @@ import Post from "@components/Post";
 import CategoryList from "@components/CategoryList";
 import { getPosts } from "@/lib/posts";
 
-export default function CategoryBlogPage({ posts, categoryName, categories }) {
+const CategoryBlogPage = ({ posts, categoryName, categories }) => {
     return (
         <Layout>
             <h1>Category: {categoryName}</h1>
@@ -19,7 +19,7 @@ export default function CategoryBlogPage({ posts, categoryName, categories }) {
             <CategoryList categories={categories} />
         </Layout>
     );
-}
+};
 
 export async function getStaticPaths() {
     const files = fs.readdirSync(path.join("posts"));
@@ -65,3 +65,5 @@ export async function getStaticProps({ params: { category_name } }) {
         },
     };
 }
+
+export default CategoryBlogPage;

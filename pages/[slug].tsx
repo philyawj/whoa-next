@@ -67,6 +67,7 @@ interface SlugProps {
     slug: string;
 }
 
+// TODO define these as consts
 export async function getStaticProps({ params: { slug } }: ParamProps) {
     const markdownWithMeta = fs.readFileSync(
         path.join("posts", slug + ".md"),

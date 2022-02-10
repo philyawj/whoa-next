@@ -1,6 +1,6 @@
 import Layout from "@components/Layout";
 
-export default function NotFoundPage() {
+const NotFoundPage = () => {
     return (
         <Layout title="Page Not Found">
             <div>
@@ -9,4 +9,6 @@ export default function NotFoundPage() {
             </div>
         </Layout>
     );
-}
+};
+
+export default NotFoundPage;

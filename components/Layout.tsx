@@ -2,7 +2,7 @@ import Head from "next/head";
 import React from "react";
 import Header from "./Header";
 
-export default function Layout({
+const Layout = ({
     title,
     keywords,
     description,
@@ -12,7 +12,7 @@ export default function Layout({
     keywords: string;
     description: string;
     children: React.ReactNode;
-}) {
+}) => {
     return (
         <div>
             <Head>
@@ -26,10 +26,12 @@ export default function Layout({
             <main className="container">{children}</main>
         </div>
     );
-}
+};
 
 Layout.defaultProps = {
     title: "Welcome to Whoa",
     keywords: "whoa, amazing",
     description: "Amazing facts",
 };
+
+export default Layout;

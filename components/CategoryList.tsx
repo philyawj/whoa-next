@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function CategoryList({ categories }) {
+const CategoryList = ({ categories }) => {
     return (
         <div>
             <ul>
@@ -14,4 +14,6 @@ export default function CategoryList({ categories }) {
             </ul>
         </div>
     );
-}
+};
+
+export default CategoryList;

@@ -10,13 +10,7 @@ interface Post {
     };
 }
 
-export default function Home({
-    posts,
-    categories,
-}: {
-    posts: Post[];
-    categories: [];
-}) {
+const Home = ({ posts, categories }: { posts: Post[]; categories: [] }) => {
     return (
         <Layout>
             <div>
@@ -28,7 +22,7 @@ export default function Home({
             <CategoryList categories={categories} />
         </Layout>
     );
-}
+};
 
 export async function getStaticProps() {
     const posts = getPosts();
@@ -43,3 +37,5 @@ export async function getStaticProps() {
         },
     };
 }
+
+export default Home;
