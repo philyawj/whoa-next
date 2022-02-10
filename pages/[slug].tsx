@@ -4,19 +4,11 @@ import matter from "gray-matter";
 import { marked } from "marked";
 import Link from "next/link";
 import Layout from "@components/Layout";
-import { Params } from "types";
+import { Frontmatter, Params } from "types";
 
 interface PostPageProps {
-    frontmatter: PostFrontmatter;
-    content: any;
-    slug: string;
-}
-interface PostFrontmatter {
-    title: string;
-    category: string;
-    date: string;
-    cover_image: string;
-    cover_image_alt: string;
+    frontmatter: Frontmatter;
+    content: string;
 }
 
 interface SlugProps {
@@ -26,7 +18,6 @@ interface SlugProps {
 const PostPage = ({
     frontmatter: { title, category, date, cover_image, cover_image_alt },
     content,
-    slug,
 }: PostPageProps) => {
     return (
         <Layout title={title}>
@@ -78,7 +69,6 @@ export async function getStaticProps({ params: { slug } }: Params<SlugProps>) {
         props: {
             frontmatter,
             content,
-            slug,
         },
     };
 }
