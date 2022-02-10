@@ -3,6 +3,13 @@ export interface PostType {
     frontmatter: Frontmatter;
 }
 
+export interface PostToSort {
+    slug: string;
+    frontmatter: {
+        [key: string]: any;
+    };
+}
+
 export interface Params<T> {
     params: T;
 }

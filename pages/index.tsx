@@ -30,8 +30,6 @@ export async function getStaticProps() {
     const categories = posts.map((post) => post.frontmatter.category);
     const uniqueCategories = [...new Set(categories)];
 
-    console.log(uniqueCategories);
-
     return {
         props: {
             posts: posts,

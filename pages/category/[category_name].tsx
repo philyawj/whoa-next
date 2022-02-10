@@ -11,7 +11,7 @@ interface CategoryNameProps {
     category_name: string;
 }
 
-const CategoryBlogPage = ({
+const CategoryPage = ({
     posts,
     categoryName,
     categories,
@@ -21,7 +21,7 @@ const CategoryBlogPage = ({
     categories: String[];
 }) => {
     return (
-        <Layout>
+        <Layout title={categoryName}>
             <h1>Category: {categoryName}</h1>
             <div>
                 {posts.map((post, index) => (
@@ -58,16 +58,15 @@ export async function getStaticPaths() {
     };
 }
 
+// TODO make functional async
 export async function getStaticProps({
     params: { category_name },
 }: Params<CategoryNameProps>) {
     const posts = getPosts();
 
-    // categories for sidebar
     const categories = posts.map((post) => post.frontmatter.category);
     const uniqueCategories = [...new Set(categories)];
 
-    // Filter posts by category
     const categoryPosts = posts.filter(
         (post) => post.frontmatter.category.toLowerCase() === category_name,
     );
@@ -81,4 +80,4 @@ export async function getStaticProps({
     };
 }
 
-export default CategoryBlogPage;
+export default CategoryPage;

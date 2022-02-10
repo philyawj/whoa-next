@@ -1,5 +1,5 @@
-import { PostType } from "types";
+import { PostToSort } from "types";
 
-export const sortByDate = (a: PostType, b: PostType) => {
+export const sortByDate = (a: PostToSort, b: PostToSort) => {
     return b.frontmatter.date.localeCompare(a.frontmatter.date);
 };
