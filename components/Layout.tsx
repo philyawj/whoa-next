@@ -3,14 +3,14 @@ import React from "react";
 import Header from "./Header";
 
 const Layout = ({
-    title,
-    keywords,
-    description,
+    title = "Whoa Static Site",
+    keywords = "whoa, amazing",
+    description = "Amazing facts. Whao",
     children,
 }: {
-    title: string;
-    keywords: string;
-    description: string;
+    title?: string;
+    keywords?: string;
+    description?: string;
     children: React.ReactNode;
 }) => {
     return (
@@ -26,12 +26,6 @@ const Layout = ({
             <main className="container">{children}</main>
         </div>
     );
-};
-
-Layout.defaultProps = {
-    title: "Welcome to Whoa",
-    keywords: "whoa, amazing",
-    description: "Amazing facts",
 };
 
 export default Layout;

@@ -1,6 +1,7 @@
 import Link from "next/link";
+import { PostType } from "types";
 
-const Post = ({ post }) => {
+const Post = ({ post }: { post: PostType }) => {
     return (
         <div className="post">
             <h2>

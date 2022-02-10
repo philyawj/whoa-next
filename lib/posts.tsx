@@ -5,7 +5,7 @@ import { sortByDate } from "@/utils/index";
 
 const files = fs.readdirSync(path.join("posts"));
 
-export function getPosts() {
+export const getPosts = () => {
     const posts = files.map((filename) => {
         const slug = filename.replace(".md", "");
 
@@ -23,4 +23,4 @@ export function getPosts() {
     });
 
     return posts.sort(sortByDate);
-}
+};

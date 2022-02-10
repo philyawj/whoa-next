@@ -2,19 +2,19 @@ import Layout from "@components/Layout";
 import Post from "@components/Post";
 import CategoryList from "@components/CategoryList";
 import { getPosts } from "@/lib/posts";
+import { PostType } from "types";
 
-interface Post {
-    slug: string;
-    frontmatter: {
-        [key: string]: any;
-    };
-}
-
-const Home = ({ posts, categories }: { posts: Post[]; categories: [] }) => {
+const HomePage = ({
+    posts,
+    categories,
+}: {
+    posts: PostType[];
+    categories: String[];
+}) => {
     return (
         <Layout>
             <div>
-                {posts.map((post, index: number) => (
+                {posts.map((post, index) => (
                     <Post key={index} post={post} />
                 ))}
             </div>
@@ -30,6 +30,8 @@ export async function getStaticProps() {
     const categories = posts.map((post) => post.frontmatter.category);
     const uniqueCategories = [...new Set(categories)];
 
+    console.log(uniqueCategories);
+
     return {
         props: {
             posts: posts,
@@ -38,4 +40,4 @@ export async function getStaticProps() {
     };
 }
 
-export default Home;
+export default HomePage;

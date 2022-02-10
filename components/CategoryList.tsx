@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const CategoryList = ({ categories }) => {
+const CategoryList = ({ categories }: { categories: String[] }) => {
     return (
         <div>
             <ul>
