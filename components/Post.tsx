@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { PostType } from "types";
 
+const prefix = "/whoa-next";
+
 const Post = ({ post }: { post: PostType }) => {
     return (
         <div className="post">
@@ -8,7 +10,7 @@ const Post = ({ post }: { post: PostType }) => {
                 <Link href={`/${post.slug}`}>{post.frontmatter.title}</Link>
             </h2>
             <img
-                src={post.frontmatter.cover_image}
+                src={prefix + post.frontmatter.cover_image}
                 width={400}
                 className="responsive"
                 alt={post.frontmatter.cover_image_alt}
