@@ -28,7 +28,11 @@ jobs:
   
     - run: npm ci
     - run: npm run build
+      env:
+        NEXT_PUBLIC_BASE_PATH: "/whoa-next"
     - run: npm run export
+      env:
+        NEXT_PUBLIC_BASE_PATH: "/whoa-next"
     - run: touch ./out/.nojekyll
     
     - name: Deploy 🚀
