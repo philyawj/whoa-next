@@ -15,6 +15,8 @@ interface SlugProps {
     slug: string;
 }
 
+const prefix = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 const PostPage = ({
     frontmatter: { title, category, date, cover_image, cover_image_alt },
     content,
@@ -23,7 +25,7 @@ const PostPage = ({
         <Layout title={title}>
             <h1>{title}</h1>
             <img
-                src={cover_image}
+                src={prefix + cover_image}
                 width={640}
                 className="responsive"
                 alt={cover_image_alt}
