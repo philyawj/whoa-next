@@ -8,8 +8,8 @@ const AboutPage = () => {
             <h1>About</h1>
             <div>
                 <p>
-                    This is a static site about random interesting things built
-                    with Next.js and Markdown. Deployed with GitHub Actions and
+                    A static site about random interesting things built with
+                    Next.js and Markdown. Deployed with GitHub Actions and
                     Pages.
                 </p>
 
