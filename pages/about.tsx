@@ -1,6 +1,5 @@
 import Layout from "@components/Layout";
-
-const prefix = process.env.NEXT_PUBLIC_BASE_PATH || "";
+import { prefix } from "../constants";
 
 const AboutPage = () => {
     return (

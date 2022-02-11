@@ -1,10 +1,8 @@
 import Head from "next/head";
 import React from "react";
 import Header from "./Header";
+import { prefix } from "../constants";
 
-const prefix = process.env.NEXT_PUBLIC_BASE_PATH || "";
-
-// TODO test defaults
 const Layout = ({
     title = "Whoa Static Site",
     keywords = "whoa, amazing",

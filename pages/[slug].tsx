@@ -5,6 +5,7 @@ import { marked } from "marked";
 import Link from "next/link";
 import Layout from "@components/Layout";
 import { Frontmatter, Params } from "types";
+import { prefix } from "../constants";
 
 interface PostPageProps {
     frontmatter: Frontmatter;
@@ -14,8 +15,6 @@ interface PostPageProps {
 interface SlugProps {
     slug: string;
 }
-
-const prefix = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 const PostPage = ({
     frontmatter: { title, category, date, cover_image, cover_image_alt },

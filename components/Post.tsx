@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { PostType } from "types";
-
-const prefix = process.env.NEXT_PUBLIC_BASE_PATH || "";
+import { prefix } from "../constants";
 
 const Post = ({ post }: { post: PostType }) => {
     return (
