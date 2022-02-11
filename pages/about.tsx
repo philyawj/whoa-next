@@ -1,5 +1,7 @@
 import Layout from "@components/Layout";
 
+const prefix = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 const AboutPage = () => {
     return (
         <Layout title="About Whoa">
@@ -11,7 +13,7 @@ const AboutPage = () => {
                 </p>
 
                 <img
-                    src="/images/whoa.png"
+                    src={prefix + "/whoa.png"}
                     alt="whoa neo"
                     className="responsive"
                 />

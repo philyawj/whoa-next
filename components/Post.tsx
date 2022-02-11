@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { PostType } from "types";
 
-const prefix = "/whoa-next";
+const prefix = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 const Post = ({ post }: { post: PostType }) => {
     return (

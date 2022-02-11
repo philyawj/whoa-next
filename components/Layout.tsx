@@ -2,7 +2,7 @@ import Head from "next/head";
 import React from "react";
 import Header from "./Header";
 
-const prefix = "/whoa-next";
+const prefix = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 // TODO test defaults
 const Layout = ({
