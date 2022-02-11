@@ -13,7 +13,7 @@ const AboutPage = () => {
                 </p>
 
                 <img
-                    src={prefix + "/whoa.png"}
+                    src={prefix + "/images/whoa.png"}
                     alt="whoa neo"
                     className="responsive"
                 />
