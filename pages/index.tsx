@@ -1,7 +1,7 @@
 import Layout from "@components/Layout";
 import Post from "@components/Post";
 import CategoryList from "@components/CategoryList";
-import { getPosts } from "@/lib/posts";
+import { getPosts, getUniqueCategories } from "@/lib/posts";
 import { PostType } from "types";
 
 const HomePage = ({
@@ -27,8 +27,7 @@ const HomePage = ({
 export const getStaticProps = async () => {
     const posts = getPosts();
 
-    const categories = posts.map((post) => post.frontmatter.category);
-    const uniqueCategories = [...new Set(categories)];
+    const uniqueCategories = getUniqueCategories(posts);
 
     return {
         props: {

@@ -4,7 +4,7 @@ import matter from "gray-matter";
 import Layout from "@components/Layout";
 import Post from "@components/Post";
 import CategoryList from "@components/CategoryList";
-import { getPosts } from "@/lib/posts";
+import { getPosts, getUniqueCategories } from "@/lib/posts";
 import { Params, PostType } from "types";
 
 interface CategoryNameProps {
@@ -63,8 +63,7 @@ export const getStaticProps = async ({
 }: Params<CategoryNameProps>) => {
     const posts = getPosts();
 
-    const categories = posts.map((post) => post.frontmatter.category);
-    const uniqueCategories = [...new Set(categories)];
+    const uniqueCategories = getUniqueCategories(posts);
 
     const categoryPosts = posts.filter(
         (post) => post.frontmatter.category.toLowerCase() === category_name,
